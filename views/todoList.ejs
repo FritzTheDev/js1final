@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">FRITZNOTES</a>
+            </div>
+        </div>
+    </nav>
+    <form action='/create' method="post">
+        <label for="todoEntry">Todo Entry:</label>
+        <input id="todoEntry" name="todo_field" type="text">
+        <input type="submit" value="OK">
+    </form>
+    <div class="row">
+        <% todos.forEach(function(todo){ %>
+            <div class="col-md-4">
+                <p><%= todo.body</p>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
