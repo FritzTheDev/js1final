@@ -60,6 +60,6 @@ app.post('/update/:id', function(req, res){
     res.redirect('/');
 })
 
-app.listen(3000, process.env.IP, function(){
+app.listen(process.env.PORT || 3000, process.env.IP, function(){
     console.log('listening on port 3000');
 });
