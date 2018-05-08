@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 </head>
 
 <body>
@@ -15,17 +17,25 @@
             </div>
         </div>
     </nav>
-    <form action='/create' method="post">
+    <form action='/create' method="POST">
         <label for="todoEntry">Todo Entry:</label>
         <input id="todoEntry" name="todo_field" type="text">
         <input type="submit" value="OK">
     </form>
-    <div class="row">
-        <% todos.forEach(function(todo){ %>
-            <div class="col-md-4">
-                <p><%= todo.body</p>
-            </div>
-        <% }) %>
-    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <% todos.forEach(function(todo){ %>
+                <div class="col-sm-4 text-center">
+                    <div class="todocontainers">
+                        <h2><%= todo.body %></h2><br>
+                        <a href=<%-'/delete/' + todo.id %>>delete</a>
+                        <form method="POST" action=<%-'/update/' + todo.id %>>
+                            <input type="text" name="updateText">
+                            <input type="submit" value="Update">
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
 </body>
 </html>

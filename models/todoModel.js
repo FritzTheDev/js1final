@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 const todoSchema = new Schema(
     {
         body: {type: String, required: true, max: 30},
-        checked_off: {type: String, default: Boolean}
+        checked_off: {type: String, default: Boolean},
     }
 );
 
