@@ -12,7 +12,6 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 //mongoose setup + importing todo model
-//replace with DB_URL=mongodb://fritz:cat@ds113626.mlab.com:13626/js1final for prod
 require('dotenv').config();
 mongoose.connect(process.env.DB_URL);
 var db = mongoose.connection;
