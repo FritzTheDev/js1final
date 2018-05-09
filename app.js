@@ -31,7 +31,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 app.get('/', async function (req, res, next) {
     try {
         const todos = await Todo.find({});
-        res.render('todolist.ejs', { todos });
+        res.render('todolist', { todos });
     } catch (err) {
         next(err);
     }
