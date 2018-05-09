@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Fritz's Note App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
@@ -18,15 +18,17 @@
             </div>
         </div>
     </nav>
-    <form action='/create' method="POST">
-        <label for="todoEntry">Todo Entry:</label>
-        <input id="todoEntry" name="todo_field" type="text">
-        <input type="submit" value="OK">
-    </form>
+    <div class="container-fluid">
+        <form action='/create' method="POST">
+            <label for="todoEntry">Create new Todo:</label>
+            <input id="todoEntry" name="todo_field" type="text">
+            <input type="submit" value="OK">
+        </form>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <% todos.forEach(function(todo){ %>
-                <div class="col-sm-4 text-center">
+                <div class="col-md-4 text-center">
                     <div class="todocontainers">
                         <h2><%= todo.body %></h2><br>
                         <form method="POST" id="update_form" action=<%-'/update/' + todo.id %>>
