@@ -6,6 +6,7 @@
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 </head>
 
@@ -28,14 +29,16 @@
                 <div class="col-sm-4 text-center">
                     <div class="todocontainers">
                         <h2><%= todo.body %></h2><br>
-                        <a href=<%-'/delete/' + todo.id %>>delete</a>
-                        <form method="POST" action=<%-'/update/' + todo.id %>>
-                            <input type="text" name="updateText">
-                            <input type="submit" value="Update">
+                        <form method="POST" id="update_form" action=<%-'/update/' + todo.id %>>
+                            <a href=<%- '/delete/' + todo.id %>><i class="fas fa-trash padding-right fa-2x"></i></a>
+                            <a href="javascript:{}" onclick="document.getElementById('update_form').submit();"><i class="fas fa-edit fa-2x"></i></a>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="updateText">
+                            </div>
                         </form>
                     </div>
                 </div>
             <% }) %>
         </div>
-</body>
+    </body>
 </html>
