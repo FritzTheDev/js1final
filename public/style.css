@@ -1,5 +1,4 @@
 .todocontainers {
-  height: 20vh;
   background-color: #ffffa5;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -17,5 +16,11 @@
 
 i {
   color: black; }
+
+.burlywood-bg {
+  background-color: #DEB887; }
+
+.black-txt {
+  color: black !important; }
 
 /*# sourceMappingURL=style.css.map */
