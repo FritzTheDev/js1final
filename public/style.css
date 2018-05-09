@@ -20,6 +20,10 @@ form {
 i {
   color: black; }
 
+.checkedoff {
+  text-decoration: line-through;
+  background-color: darkgray; }
+
 .burlywood-bg {
   background-color: #DEB887; }
 
