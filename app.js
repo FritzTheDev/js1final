@@ -2,7 +2,6 @@
 const mongoose   = require('mongoose');
 const express    = require('express');
 const bodyParser = require('body-parser');
-const path = require('path')
 
 //initialize app
 const app = express();
@@ -10,7 +9,6 @@ const app = express();
 //set up middleware + View Engine
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/app/views'))
 app.use(express.static(__dirname + '/public'));
 
 //mongoose setup + importing todo model
